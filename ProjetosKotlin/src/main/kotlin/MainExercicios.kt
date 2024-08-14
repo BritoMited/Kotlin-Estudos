@@ -1,6 +1,12 @@
+import java.lang.Math.pow
+import kotlin.math.pow
+import kotlin.math.sqrt
+
 fun main(){
 
-    ex09()
+    //ex09()
+
+    ex18()
 
 }
 
@@ -34,5 +40,27 @@ fun ex09(){
         anterior = atual
         atual = proximo
     }
+
+}
+
+fun ex18(){
+    println("digite o numero")
+    var num = readln()
+
+    var numb = num.toInt()
+
+    var soma = Array(num.length+1) { 0 }
+
+    for(i in 1..num.length){
+
+        var divisao = pow(10.0, num.length - i.toDouble()).toInt()
+        soma[i] = numb / divisao
+        numb -= soma[i] * divisao
+    }
+
+    soma.forEach { valor -> soma[0] += pow(valor.toDouble() , num.length.toDouble()).toInt()}
+
+    println(soma[0])
+
 
 }
