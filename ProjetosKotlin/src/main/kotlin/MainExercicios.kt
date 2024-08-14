@@ -5,8 +5,8 @@ import kotlin.math.sqrt
 fun main(){
 
     //ex09()
-
-    ex18()
+    sequenciaDeCollatz()
+    //ex18()
 
 }
 
@@ -63,4 +63,16 @@ fun ex18(){
     println(soma[0])
 
 
+}
+
+fun sequenciaDeCollatz(){
+    println("digite um num")
+    var num = readln().toInt()
+    println(num)
+    do{
+        if (num % 2 == 0){
+            num /= 2
+        } else num = num * 3 + 1
+        println(num)
+    }while(num != 1)
 }
