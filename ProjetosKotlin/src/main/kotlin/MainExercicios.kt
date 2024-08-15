@@ -1,3 +1,7 @@
+import POO.entities.Carro
+import POO.entities.Contato
+import POO.entities.Jogo
+import POO.entities.Pessoa
 import java.lang.Math.pow
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -5,8 +9,26 @@ import kotlin.math.sqrt
 fun main(){
 
     //ex09()
-    sequenciaDeCollatz()
+    //sequenciaDeCollatz()
     //ex18()
+    //arrayDinamico()
+//    var mcqueen = Carro()
+//    mcqueen.marca = "nascar"
+//    mcqueen.modelo = "katchau"
+//
+//    mcqueen.acelerar()
+//
+//    println(mcqueen.toString())
+
+    var contato = Contato("ThiagogayL", "4355435-543534")
+
+    contato.callar()
+
+    var pessoa = Pessoa("eneas" , 10)
+
+    pessoa.apresentar()
+
+    var jogo1 = Jogo()
 
 }
 
@@ -16,7 +38,7 @@ fun ex08() {
     var num = readln().toInt()
     var verifier = true
 
-    for(i in 2..num - 1){
+    for(i in 2 until num - 1){
         if(num % i == 0){
             println("não é primo")
             verifier = false
@@ -76,3 +98,22 @@ fun sequenciaDeCollatz(){
         println(num)
     }while(num != 1)
 }
+
+
+
+fun arrayDinamico(){
+    var valores = mutableListOf<Int>()
+
+    valores.add(10)
+    valores.add(10456)
+    valores.add(10900)
+    valores.add(100)
+
+    println("adicioene numero")
+    valores.add(readln().toInt())
+
+    println(valores.joinToString())
+
+
+}
+
